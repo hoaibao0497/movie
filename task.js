@@ -27,6 +27,17 @@ const deleteTask = function(title) {
         saveTask(tasks);
     }
 };
+
+// list all task
+const listAllTask = function() {
+    const tasks = getTask();
+    tasks.forEach((element, index) => {
+        console.log(index + 1, "title:", element.title);
+        console.log("description:", element.description);
+        console.log("---")
+    });
+}
+
 const saveTask = function(tasks) {
     const taskJSON = JSON.stringify(tasks);
     fs.writeFileSync("task.json", taskJSON);
@@ -50,4 +61,5 @@ const getTask = function() {
 module.exports = {
     addTask,
     deleteTask,
+    listAllTask,
 }
