@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+// add task
 const addTask = function(title, description) {
     // get old task
     const tasks = getTask();
@@ -11,12 +12,25 @@ const addTask = function(title, description) {
     // add task
     const task = { title, description };
     tasks.push(task);
-    const taskJSON = JSON.stringify(tasks)
-        // write file
-    fs.writeFileSync("task.json", taskJSON);
+    saveTask(tasks);
 
 }
 
+// remove task
+const deleteTask = function(title) {
+    const tasks = getTask();
+    const index = tasks.findIndex((item) => {
+        return item.title === title;
+    })
+    if (index !== -1) {
+        tasks.splice(index, 1);
+        saveTask(tasks);
+    }
+};
+const saveTask = function(tasks) {
+    const taskJSON = JSON.stringify(tasks);
+    fs.writeFileSync("task.json", taskJSON);
+}
 
 const getTask = function() {
     try {
@@ -35,4 +49,5 @@ const getTask = function() {
 
 module.exports = {
     addTask,
+    deleteTask,
 }

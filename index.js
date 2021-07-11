@@ -1,5 +1,5 @@
 const yargs = require('yargs');
-const { addTask } = require('./task');
+const { addTask, deleteTask } = require('./task');
 
 // add task
 yargs.command({
@@ -29,7 +29,7 @@ yargs.command({
         },
     },
     handler: function(args) {
-        console.log("delete", args)
+        deleteTask(args.title)
     },
 });
 
