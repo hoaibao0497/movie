@@ -1,0 +1,29 @@
+{
+    "name": "prj-movie",
+    "version": "1.0.0",
+    "description": "project movie",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon --inspect index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/hoaibao0497/movie.git"
+    },
+    "keywords": [
+        "movie"
+    ],
+    "author": "bao",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/hoaibao0497/movie/issues"
+    },
+    "homepage": "https://github.com/hoaibao0497/movie#readme",
+    "devDependencies": {
+        "express": "^4.17.1",
+        "nodemon": "^2.0.12",
+        "yargs": "^17.0.1"
+    },
+    "dependencies": {}
+}
